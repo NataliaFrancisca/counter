@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
+
 import { GlobalStyle } from "./styles/global";
 import { Provider } from 'react-redux';
+
 import { createStore} from 'redux';
-import { countReducer } from './reducers/reducer';
-const store = createStore(countReducer);
+import { rootReducer } from './reducers';
+
+const store = createStore(rootReducer);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
