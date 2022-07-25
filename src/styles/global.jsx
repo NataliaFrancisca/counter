@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     .App{
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
