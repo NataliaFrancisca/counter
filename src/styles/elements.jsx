@@ -1,17 +1,5 @@
 import styled from "styled-components";
 
-export const ButtonCounter = styled.button`
-    background-color: rgba(240,240,240,.7);
-    border-radius: 4px;
-
-    padding: 2px;
-
-    font-size: 1em;
-    width: 90%;
-
-    cursor: pointer;
-`
-
 export const ButtonClean = styled.button`
     background-color: #EB4747;
     padding: 5px;
@@ -22,11 +10,11 @@ export const ButtonClean = styled.button`
 `
 
 export const Board = styled.main`
-    min-width: 60%;
+    min-width: 50%;
     max-width: 90%;
     width: auto;
 
-    padding: 30px 20px;
+    padding: 20px;
     border: solid black 6px;
     border-radius: 4px;
 
@@ -35,12 +23,6 @@ export const Board = styled.main`
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     align-items: center;
-
-    @media screen and (max-width: 600px) {
-        transform: rotate(-90deg);
-        overflow-x: hidden;
-        min-width: 80vh;
-    }
 
     @media screen and (max-width: 760px){
         grid-template-columns: 3fr 1fr 3fr;
