@@ -1,12 +1,35 @@
 import styled from "styled-components";
 
-export const ButtonClean = styled.button`
-    background-color: #EB4747;
-    padding: 5px;
+export const BoardButtons = styled.div`
+    min-width: 50%;
+    max-width: 90%;
+    width: auto;
 
-    width: 90%;
+    display: flex;
+`
+
+export const Button = styled.button`
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+    height: 50px;
+    width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     cursor: pointer;
+
+    background-color: ${props => props.backgroundColor};
+
+    &:hover{
+        color: #FFFFFF;
+    }
+
+    &:last-child{
+        margin-left: 10px;
+    }
 `
 
 export const Board = styled.main`
@@ -23,6 +46,8 @@ export const Board = styled.main`
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     align-items: center;
+
+    position: relative;
 
     @media screen and (max-width: 760px){
         grid-template-columns: 3fr 1fr 3fr;
