@@ -1,51 +1,34 @@
-import { increment, decrement } from "./actions/counter";
 import { useSelector, useDispatch } from "react-redux";
 
-import { Board, ButtonCounter } from "./styles/elements";
-import { useEffect, useRef} from "react";
-import { Score } from "./components/Score/style";
-import TeamComponent from "./components/Team";
+import { Board, ButtonClean } from "./styles/elements";
 import { TeamBoard } from "./components/Team/style";
-
-const stateCounter = state => state;
 
 function App() {
 
-  // const counter = useSelector(stateCounter);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const btnDecrementRef = useRef();
+  const counterHome = useSelector(state => state.reducerCountHome);
+  const counterVisited = useSelector(state => state.reducerCountVisitor);
 
-  // const onIncrement = () => {
-  //   dispatch(increment())
-  // }
+  const onIncrementHome = () => dispatch({type: 'increment/home'});
+  const onDecrementHome = () => dispatch({type: 'decrement/home'});
 
-  // const onDecrement = () => {
-  //   dispatch(decrement())
-  // }
+  const onIncrementVisitor = () => dispatch({type: 'increment/visitor'});
+  const onDecrementVisitor = () => dispatch({type: 'decrement/visitor'});
 
-  // useEffect(() => {
-  //   counter == 0 ?  btnDecrementRef.current.disabled = true : btnDecrementRef.current.disabled = false;
-  // })
+  const onCleanScore = () => {
+    dispatch({type: 'cleanScore/visitor'});
+    dispatch({type: 'cleanScore/home'});
+  }
 
-  return (
-    <div className="App">
-
+  return  (
+    <main className="App">
       <Board>
-        <TeamBoard nameTeam={'home'} />
+        <TeamBoard nameTeam={'home'} counterTeam={counterHome} onIncrement={onIncrementHome} onDecrement={onDecrementHome}/>
           <span>VS</span>
-        <TeamBoard nameTeam={'visit'}/>
+        <TeamBoard nameTeam={'visitor'} counterTeam={counterVisited} onIncrement={onIncrementVisitor} onDecrement={onDecrementVisitor} />
       </Board>
-
-
-
-
-      {/* <Score />
-        <span>X</span>
-      <Score /> */}
-
-    
-    </div>
+    </main>
   )
 }
 
