@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { Board, ButtonClean } from "./styles/elements";
+import { Board, BoardButtons, Button} from "./styles/elements";
 import { TeamBoard } from "./components/Team/style";
 
 function App() {
@@ -23,6 +23,17 @@ function App() {
 
   return  (
     <main className="App">
+
+      <BoardButtons>
+        <Button onClick={onCleanScore} backgroundColor={"rgba(249,76,102,.7)"}>
+          <span class="material-symbols-outlined">mop</span>
+        </Button>
+
+        <Button backgroundColor={"#66BFBF"}>
+          <span class="material-symbols-outlined">task_alt</span>
+        </Button>
+      </BoardButtons>
+
       <Board>
         <TeamBoard nameTeam={'home'} counterTeam={counterHome} onIncrement={onIncrementHome} onDecrement={onDecrementHome}/>
           <span>VS</span>
