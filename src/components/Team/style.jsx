@@ -67,4 +67,8 @@ export const ButtonDecrement = styled.button`
     z-index: 11;
 
     margin-top: 10px;
+
+    &:hover{
+        background-color: #ff1d3fb2;
+    }
 `
