@@ -1,44 +1,59 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { Board, BoardButtons, Button} from "./styles/elements";
-import { TeamBoard } from "./components/Team/style";
+import { BoardButtons, Button, BackgroundMask} from "./styles/elements";
+import { BoardCounter } from "./components/BoardCounter/style";
+import { ModalMatchs } from "./components/ModalMatchs/style";
+
+import { formatDate } from "./utils/format_date";
 
 function App() {
 
   const dispatch = useDispatch();
 
   const counterHome = useSelector(state => state.reducerCountHome);
-  const counterVisited = useSelector(state => state.reducerCountVisitor);
-
-  const onIncrementHome = () => dispatch({type: 'increment/home'});
-  const onDecrementHome = () => dispatch({type: 'decrement/home'});
-
-  const onIncrementVisitor = () => dispatch({type: 'increment/visitor'});
-  const onDecrementVisitor = () => dispatch({type: 'decrement/visitor'});
+  const counterVisitor = useSelector(state => state.reducerCountVisitor);
+  const modalState = useSelector(state => state.reducerModal);
 
   const onCleanScore = () => {
-    dispatch({type: 'cleanScore/visitor'});
-    dispatch({type: 'cleanScore/home'});
+    onSaveMatch();
+    // dispatch({type: 'cleanScore/visitor'});
+    // dispatch({type: 'cleanScore/home'});
   }
+
+  const onSaveMatch = () => {
+    const date = new Date();
+    const formatedDate = formatDate(date);
+
+    const matchData = {
+      home: {name: 'marias', score: counterHome},
+      visitor: {name: 'joanas', score: counterVisitor},
+      date: formatedDate
+    };
+
+    console.log(matchData);
+  }
+
+  const onShowModal = () => dispatch({type: 'modal/toggle'});
 
   return  (
     <main className="App">
 
+      <BackgroundMask filter={modalState} />
+
       <BoardButtons>
         <Button onClick={onCleanScore} backgroundColor={"rgba(249,76,102,.7)"}>
-          <span class="material-symbols-outlined">mop</span>
+          <span className="material-symbols-outlined">mop</span>
         </Button>
 
-        <Button backgroundColor={"#66BFBF"}>
-          <span class="material-symbols-outlined">task_alt</span>
+        <Button onClick={onShowModal} backgroundColor={"#66BFBF"}>
+          <span className="material-symbols-outlined">visibility</span>
         </Button>
       </BoardButtons>
 
-      <Board>
-        <TeamBoard nameTeam={'home'} counterTeam={counterHome} onIncrement={onIncrementHome} onDecrement={onDecrementHome}/>
-          <span>VS</span>
-        <TeamBoard nameTeam={'visitor'} counterTeam={counterVisited} onIncrement={onIncrementVisitor} onDecrement={onDecrementVisitor} />
-      </Board>
+      <BoardCounter />
+
+      {modalState && <ModalMatchs /> }
+
     </main>
   )
 }
