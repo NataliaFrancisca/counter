@@ -36,10 +36,10 @@ export const Board = styled.main`
     grid-template-columns: 2fr 1fr 2fr;
     align-items: center;
 
-    @media screen and (max-width: 600px)  {
+    @media screen and (max-width: 600px) {
         transform: rotate(-90deg);
         overflow-x: hidden;
-        min-width: 90vh;
+        min-width: 80vh;
     }
 
     @media screen and (max-width: 760px){
