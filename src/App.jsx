@@ -15,9 +15,9 @@ function App() {
   const modalState = useSelector(state => state.reducerModal);
 
   const onCleanScore = () => {
-    onSaveMatch();
-    // dispatch({type: 'cleanScore/visitor'});
-    // dispatch({type: 'cleanScore/home'});
+    dispatch({type: 'matchs/setMatchs', payload: onSaveMatch()})
+    dispatch({type: 'cleanScore/visitor'});
+    dispatch({type: 'cleanScore/home'});
   }
 
   const onSaveMatch = () => {
@@ -30,7 +30,7 @@ function App() {
       date: formatedDate
     };
 
-    console.log(matchData);
+    return matchData;
   }
 
   const onShowModal = () => dispatch({type: 'modal/toggle'});
