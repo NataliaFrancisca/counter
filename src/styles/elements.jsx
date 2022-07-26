@@ -21,15 +21,10 @@ export const Button = styled.button`
 
     cursor: pointer;
 
+    color: #FFFFFF;
     background-color: ${props => props.backgroundColor};
 
-    &:hover{
-        color: #FFFFFF;
-    }
-
-    &:last-child{
-        margin-left: 10px;
-    }
+    margin-right: 10px;
 `
 
 export const Score = styled.div`
@@ -57,7 +52,6 @@ export const Score = styled.div`
         border-radius: 3px;
         font-size: 2em;
         margin: 0 1px;
-
 
         font-family: 'IBM Plex Mono', monospace;
         font-weight: 900;
