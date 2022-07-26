@@ -10,13 +10,14 @@ export const BoardCounter = styled(BoardCounterComponent)`
     border: solid black 6px;
     border-radius: 4px;
 
-    background-color: #B2A4FF;
+    background-color: #764AF1;
 
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     align-items: center;
 
-    /* position: relative; */
+    color: #FFFFFF;
+
 
     @media screen and (max-width: 760px){
         grid-template-columns: 3fr 1fr 3fr;
