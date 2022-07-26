@@ -43,6 +43,12 @@ export const TeamCounter = styled(TeamCounterComponent)`
 
         position: relative;
 
+        &:active{
+            background-color: goldenrod;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
         @media screen and (max-width: 900px){
             width: 80%;
         }
