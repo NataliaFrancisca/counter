@@ -32,6 +32,39 @@ export const Button = styled.button`
     }
 `
 
+export const Score = styled.div`
+    display: flex;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #FFFFFF;
+    
+    & h1{
+        min-width: 3vw;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        padding: 8px;
+
+        background-color: ${props => props.winner ? '#0ebf0e' : '#c42611' };
+
+        border: solid #FFFFFF 2px;
+    }
+
+    & span{
+        min-width: 3vw;
+        padding: 6px;
+        background-color: ${props => props.winner ? '#078507' : '#851607' };
+        border: solid #FFFFFF 2px;
+        border-radius: 3px;
+        font-size: 2em;
+        margin: 0 1px;
+
+
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: 900;
+        text-align: center;
+    }
+`
+
 export const BackgroundMask = styled.div`
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
