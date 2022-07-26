@@ -4,8 +4,6 @@ export const reducerMatchs = (state = [], action) => {
             return [...state, action.payload];
         case 'matchs/getMatchs':
             return state;
-        case 'matchs/deleteMatchs':
-            return state.slice(0);
         default:
             return state;
     }
