@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const BoardButtons = styled.div`
-    width: 90%;
-    display: flex;
-    justify-content: center;
-`
-
 export const Button = styled.button`
     border-radius: 50%;
     margin-bottom: 10px;
@@ -80,3 +74,40 @@ export const BackgroundMask = styled.div`
     z-index: 1;
     inset: ${props => props.filter ? "0px" : 'none'};
 `
+
+
+export const ModalButtonsFunction = styled.div`
+    width: 60%;
+    min-height: 60%;
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 222;
+
+    padding: 20px;
+
+    border-radius: 4px;
+    background-color: #F2F2F2;
+
+
+    #details-about-button{
+        display: flex;
+        align-items: center;
+    }
+
+    #button-start{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+
+        background-color: gold;
+        padding: 10px;  
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+`
+
+
