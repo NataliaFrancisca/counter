@@ -75,8 +75,6 @@ export const ButtonDecrement = styled.button`
     font-size: 1.5em;
     font-weight: 600;
 
-    z-index: 11;
-
     margin-top: 10px;
 
     transition: all .6s ease;
