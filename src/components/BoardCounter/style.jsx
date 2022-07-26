@@ -18,9 +18,13 @@ export const BoardCounter = styled(BoardCounterComponent)`
 
     color: #FFFFFF;
 
-
     @media screen and (max-width: 760px){
         grid-template-columns: 3fr 1fr 3fr;
+    }
+
+    @media screen and (orientation: landscape){
+        background-color: blue;
+        width: 90%;
     }
 
     & span{

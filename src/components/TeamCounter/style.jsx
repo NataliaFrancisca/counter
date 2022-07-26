@@ -50,6 +50,10 @@ export const TeamCounter = styled(TeamCounterComponent)`
         @media screen and (max-width: 550px){
             width: 90%;
         }
+
+        @media screen and (orientation: landscape){
+            padding: 10px;
+        }
     }
 
 `
