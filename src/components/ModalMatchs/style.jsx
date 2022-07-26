@@ -15,7 +15,7 @@ export const ModalMatchs = styled(ModalMatchsComponent)`
     padding: 20px;
 
     border-radius: 4px;
-    background-color: #e0eaea;
+    background-color: #F2F2F2;
 
     & header{
         display: flex;
