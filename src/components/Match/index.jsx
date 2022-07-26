@@ -33,20 +33,29 @@ const Match = ({matchData}) => {
 
     const {date, home, visitor} = matchData;
 
+    const checkWhoIsWinner = (firstValue, secondValue) => {
+        if(firstValue > secondValue){
+            return {colorA: '#0ebf0e', colorB: '#078507'};
+        }else if(firstValue == secondValue){
+            return {colorA: '#1f0fc7', colorB: '#120785'}
+        }else{
+            return {colorA: '#c42611', colorB: '#851607'}
+        }
+    }
+
     return(
         <MatchStyled>
             <div className="scores">
-                <Score winner={home.score > visitor.score}>
+                <Score backgroundColor={checkWhoIsWinner(home.score, visitor.score)}>
                     <h1>{home.name}</h1>
                     <span>{home.score}</span>
                 </Score>
 
-                <Score winner={visitor.score > home.score}>
+                <Score backgroundColor={checkWhoIsWinner(visitor.score, home.score)}>
                     <span>{visitor.score}</span>
                     <h1>{visitor.name}</h1>
                 </Score>
             </div>
-
             <span id="date">{date}</span>
         </MatchStyled>
     )
