@@ -23,7 +23,6 @@ export const BoardCounter = styled(BoardCounterComponent)`
     }
 
     @media screen and (orientation: landscape){
-        background-color: blue;
         width: 90%;
     }
 
