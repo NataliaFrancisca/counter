@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const BoardButtons = styled.div`
-    min-width: 50%;
-    max-width: 90%;
-    width: auto;
-
+    width: 90%;
     display: flex;
+    justify-content: center;
 `
 
 export const Button = styled.button`
@@ -49,6 +47,10 @@ export const Score = styled.div`
         border: solid #FFFFFF 2px;
 
         letter-spacing: 3px;
+
+        @media screen and (max-width: 450px){
+            font-size: 1em;
+        }
     }
 
     & span{
@@ -64,6 +66,10 @@ export const Score = styled.div`
         font-family: 'IBM Plex Mono', monospace;
         font-weight: 900;
         text-align: center;
+
+        @media screen and (max-width: 450px){
+            font-size: 1.4em;
+        }
     }
 `
 

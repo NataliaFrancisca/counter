@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ModalMatchsComponent from ".";
 
 export const ModalMatchs = styled(ModalMatchsComponent)`
-    width: 50%;
+    width: 60%;
     min-height: 60%;
 
     position: absolute;
@@ -11,11 +11,18 @@ export const ModalMatchs = styled(ModalMatchsComponent)`
     top: 50%;
     z-index: 222;
 
-
     padding: 20px;
 
     border-radius: 4px;
     background-color: #F2F2F2;
+
+    @media screen and (max-width: 850px){
+        width: 80%;
+    }
+
+    @media screen and (max-width: 650px){
+        width: 90%;
+    }
 
     & header{
         display: flex;
