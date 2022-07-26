@@ -25,33 +25,41 @@ export const Button = styled.button`
     background-color: ${props => props.backgroundColor};
 
     margin-right: 10px;
+    transition: filter .6s ease;
+
+    &:hover{
+        filter: brightness(50%)
+    }
 `
 
 export const Score = styled.div`
     display: flex;
     align-items: center;
     font-family: 'IBM Plex Mono', monospace;
-    color: #FFFFFF;
+    color: #000000;
     
     & h1{
-        min-width: 3vw;
+        min-width: 4vw;
         font-size: 1.2em;
         text-transform: uppercase;
-        padding: 8px;
+        padding: 8px 14px;
 
-        background-color: ${props => props.backgroundColor.colorA};
-
+        background-color: ${props => props.backgroundColor};
+        border-radius: 3px;
         border: solid #FFFFFF 2px;
+
+        letter-spacing: 3px;
     }
 
     & span{
-        min-width: 3vw;
-        padding: 6px;
-        background-color: ${props => props.backgroundColor.colorB};
+        min-width: 4vw;
+        padding: 10px 8px;
+        background-color: ${props => props.backgroundColor};
+        filter: brightness(90%);
         border: solid #FFFFFF 2px;
         border-radius: 3px;
-        font-size: 2em;
-        margin: 0 1px;
+        font-size: 2.2em;
+        margin: 0 2px;
 
         font-family: 'IBM Plex Mono', monospace;
         font-weight: 900;
