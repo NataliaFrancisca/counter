@@ -15,10 +15,16 @@ function App() {
   const modalState = useSelector(state => state.reducerModal);
 
   const onCleanScore = () => {
-    dispatch({type: 'matchs/setMatchs', payload: onSaveMatch()})
     dispatch({type: 'cleanScore/visitor'});
     dispatch({type: 'cleanScore/home'});
   }
+
+  const onFinishMatch = () => {
+    dispatch({type: 'matchs/setMatchs', payload: onSaveMatch()})
+    onCleanScore();
+  }
+
+  const onOpenModal = () => dispatch({type: 'modal/toggle'});
 
   const onSaveMatch = () => {
     const date = new Date();
@@ -33,20 +39,22 @@ function App() {
     return matchData;
   }
 
-  const onShowModal = () => dispatch({type: 'modal/toggle'});
-
   return  (
     <main className="App">
 
       <BackgroundMask filter={modalState} />
 
       <BoardButtons>
-        <Button onClick={onCleanScore} backgroundColor={"rgba(249,76,102,.7)"}>
+        <Button onClick={onCleanScore} backgroundColor={"#F32424"}>
           <span className="material-symbols-outlined">mop</span>
         </Button>
 
-        <Button onClick={onShowModal} backgroundColor={"#66BFBF"}>
+        <Button onClick={onOpenModal} backgroundColor={"#0096FF"}>
           <span className="material-symbols-outlined">visibility</span>
+        </Button>
+
+        <Button onClick={onFinishMatch} backgroundColor={"#3CCF4E"}>
+          <span className="material-symbols-outlined">check_small</span>
         </Button>
       </BoardButtons>
 
