@@ -44,7 +44,7 @@ export const Score = styled.div`
         text-transform: uppercase;
         padding: 8px;
 
-        background-color: ${props => props.winner ? '#0ebf0e' : '#c42611' };
+        background-color: ${props => props.backgroundColor.colorA};
 
         border: solid #FFFFFF 2px;
     }
@@ -52,7 +52,7 @@ export const Score = styled.div`
     & span{
         min-width: 3vw;
         padding: 6px;
-        background-color: ${props => props.winner ? '#078507' : '#851607' };
+        background-color: ${props => props.backgroundColor.colorB};
         border: solid #FFFFFF 2px;
         border-radius: 3px;
         font-size: 2em;
