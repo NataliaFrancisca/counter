@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { TeamBoard } from "../Team/style";
+import { TeamCounter } from "../TeamCounter/style";
 
 const BoardCounterComponent = ({className}) => {
 
@@ -17,9 +17,9 @@ const BoardCounterComponent = ({className}) => {
 
     return(
         <main className={className}>
-            <TeamBoard nameTeam={'home'} counterTeam={counterHome} onIncrement={onIncrementHome} onDecrement={onDecrementHome}/>
+            <TeamCounter nameTeam={'home'} counterTeam={counterHome} onIncrement={onIncrementHome} onDecrement={onDecrementHome}/>
                 <span>VS</span>
-            <TeamBoard nameTeam={'visitor'} counterTeam={counterVisitor} onIncrement={onIncrementVisitor} onDecrement={onDecrementVisitor} />
+            <TeamCounter nameTeam={'visitor'} counterTeam={counterVisitor} onIncrement={onIncrementVisitor} onDecrement={onDecrementVisitor} />
         </main>
     )
 }
