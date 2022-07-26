@@ -13,7 +13,9 @@ const MatchStyled = styled.div`
 
     width: 100%;
 
-    background-color: #B2A4FF;
+    background-color: #764AF1;
+    color: #FFFFFF;
+
     border: solid black 4px;
     border-radius: 3px;
 
@@ -24,7 +26,7 @@ const MatchStyled = styled.div`
     & #date{
         margin-top: 5px;
         font-size: 1.2em;
-        font-weight: 600;
+        font-weight: 500;
         font-family: 'IBM Plex Mono', monospace;
     }
 `;
@@ -35,11 +37,11 @@ const Match = ({matchData}) => {
 
     const checkWhoIsWinner = (firstValue, secondValue) => {
         if(firstValue > secondValue){
-            return {colorA: '#0ebf0e', colorB: '#078507'};
+            return '#3CCF4E'
         }else if(firstValue == secondValue){
-            return {colorA: '#1f0fc7', colorB: '#120785'}
+            return '#ffd700'
         }else{
-            return {colorA: '#c42611', colorB: '#851607'}
+            return '#F32424'
         }
     }
 
