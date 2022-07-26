@@ -17,6 +17,7 @@ function App() {
     <main className="App">
 
       <BackgroundMask filter={modalState} />
+      <BackgroundMask filter={modalButtonDetails} />
 
       <BoardButtons />
       <BoardCounter />
