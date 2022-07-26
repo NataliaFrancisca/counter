@@ -22,7 +22,7 @@ export const BoardCounter = styled(BoardCounterComponent)`
         grid-template-columns: 3fr 1fr 3fr;
     }
 
-    @media screen and (orientation: landscape){
+    @media screen and (max-width: 760px) and (orientation: landscape){
         width: 90%;
     }
 
