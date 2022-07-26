@@ -22,7 +22,7 @@ export const TeamCounter = styled(TeamCounterComponent)`
     }
 
     .container-points{
-        background-color: #FFB4B4;
+        background-color: gold;
     
         border-radius: 4px;
         padding: 40px;
@@ -54,7 +54,7 @@ export const TeamCounter = styled(TeamCounterComponent)`
 
 `
 export const ButtonDecrement = styled.button`
-    background-color: rgba(249,76,102,.7);
+    background-color: #F2F2F2;
     border-radius: 4px;
 
     padding: 10px;
@@ -69,6 +69,7 @@ export const ButtonDecrement = styled.button`
     margin-top: 10px;
 
     &:hover{
-        background-color: #ff1d3fb2;
+        color: #FFFFFF;
+        background-color: #eb1e1e;
     }
 `
