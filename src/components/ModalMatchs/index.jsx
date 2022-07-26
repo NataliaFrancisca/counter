@@ -11,7 +11,7 @@ const ModalMatchsComponent = ({className}) => {
     return(
         <section className={className}>
             <header>
-                <h1>Scores</h1>
+                <h1 id="title-modal">Scores</h1>
                 <button onClick={onCloseModal}>
                     <span class="material-symbols-outlined">close</span>
                 </button>

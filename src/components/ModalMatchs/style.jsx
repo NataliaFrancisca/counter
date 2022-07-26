@@ -22,7 +22,7 @@ export const ModalMatchs = styled(ModalMatchsComponent)`
         justify-content: space-between;
     }
 
-    & h1{
+    & #title-modal{
         font-size: 2em;
     }
 
