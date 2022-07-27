@@ -17,7 +17,7 @@ O projeto é um contador de pontos, onde a pessoa pode usar em partidas de difer
 
 ![App Screenshot](https://firebasestorage.googleapis.com/v0/b/github-images-6c299.appspot.com/o/team-score.gif?alt=media&token=1371a813-91cc-428b-b08f-d4a23a872939)
 
-🔗 [veja aqui o projeto](https://team-score.vercel.app/)
+🔗 [veja aqui o projeto](https://counter-nf.vercel.app/)
 
 ## Stack utilizada
 
