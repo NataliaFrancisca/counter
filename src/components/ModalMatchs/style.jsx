@@ -57,6 +57,25 @@ export const ModalMatchs = styled(ModalMatchsComponent)`
 
         border-radius: 4px;
         margin: 10px 0;
+
+        &{
+            scrollbar-width: thin;
+            scrollbar-color: #764AF1 #F2F2F2;
+        }
+
+        &::-webkit-scrollbar{
+            width: 12px;
+        }
+
+        &::-webkit-scrollbar-track{
+            background-color: #F2F2F2;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background-color: #764AF1;
+            border-radius: 20px;
+            border: 2px solid #F2F2F2;
+        }
     }
 `
 
