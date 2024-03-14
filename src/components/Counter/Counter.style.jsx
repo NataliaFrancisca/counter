@@ -1,7 +1,6 @@
-import styled from "styled-components"
-import BoardCounterComponent from "."
+import styled from "styled-components";
 
-export const BoardCounter = styled(BoardCounterComponent)`
+export const CounterComponentStyled = styled.section`
     min-width: 50%;
     max-width: 90%;
     width: auto;
@@ -17,14 +16,6 @@ export const BoardCounter = styled(BoardCounterComponent)`
     align-items: center;
 
     color: #FFFFFF;
-
-    @media screen and (max-width: 760px){
-        grid-template-columns: 3fr 1fr 3fr;
-    }
-
-    @media screen and (max-width: 850px) and (orientation: landscape){
-        width: 90%;
-    }
 
     & span{
         height: fit-content;

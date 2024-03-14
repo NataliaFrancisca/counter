@@ -1,55 +1,27 @@
-import { useSelector } from "react-redux";
-
 import { useState } from "react";
-
-import { Button, BackgroundMask, ModalButtonsFunction } from "./styles/elements";
-import { BoardCounter } from "./components/BoardCounter/style";
-import { ModalMatchs } from "./components/ModalMatchs/style";
-import BoardButtons from "./components/BoardButtons";
+import { BackgroundMask } from "./App.style";
+import Modal from "./components/Modal/Modal";
+import Counter from "./components/Counter/Counter";
+import { scoreService } from "./service/matchesService";
 
 function App() {
 
-  const modalState = useSelector(state => state.reducerModal);
+  const [toggleModal, setToggleModal] = useState(false);
 
-  const [modalButtonDetails, setModalButtonDetails] = useState(true);
+  const onToggleModal = () => setToggleModal((prev) => !prev);
+
+  scoreService.init();
 
   return  (
     <main className="App">
+      
+      {toggleModal && <BackgroundMask />}
 
-      <BackgroundMask filter={modalState} />
-      <BackgroundMask filter={modalButtonDetails} />
+      <Counter onToggleModal={onToggleModal} />
 
-      <BoardButtons />
-      <BoardCounter />
-
-      {modalButtonDetails && 
-        <ModalButtonsFunction>
-          <div id="details-about-button">
-            <Button backgroundColor={"#F32424"}>
-              <span className="material-symbols-outlined">mop</span>
-            </Button>
-            <p>clean the score</p>
-          </div>
-        
-          <div id="details-about-button">
-            <Button backgroundColor={"#0096FF"}>
-              <span className="material-symbols-outlined">visibility</span>
-            </Button>
-            <p>show all the matches</p>
-          </div>
-
-          <div id="details-about-button">
-            <Button backgroundColor={"#3CCF4E"}>
-              <span className="material-symbols-outlined">check_small</span>
-            </Button>
-            <p>finish the match</p>
-          </div>
-
-          <button id="button-start" onClick={() => setModalButtonDetails(!modalButtonDetails)}>START</button>
-        </ModalButtonsFunction>
+      {toggleModal && 
+        <Modal onCloseModal={onToggleModal} />
       }
-
-      {modalState && <ModalMatchs /> }
 
     </main>
   )

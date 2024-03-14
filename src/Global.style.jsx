@@ -7,11 +7,15 @@ export const GlobalStyle = createGlobalStyle`
         border: 0;
         box-sizing: border-box;
         font-size: 100%;
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans", sans-serif;
     }
 
     body{
         background-color: #FEFBF6;
+    }
+
+    body, button, span, h1, h2, label {
+        font-family: "Open Sans", sans-serif;
     }
 
     .App{
@@ -22,3 +26,4 @@ export const GlobalStyle = createGlobalStyle`
         justify-content: center;
     }
 `
+

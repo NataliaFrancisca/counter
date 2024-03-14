@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import ModalMatchsComponent from ".";
 
-export const ModalMatchs = styled(ModalMatchsComponent)`
+export const ModalStyledComponent = styled.section`
     width: 60%;
     min-height: 60%;
 
@@ -77,5 +76,4 @@ export const ModalMatchs = styled(ModalMatchsComponent)`
             border: 2px solid #F2F2F2;
         }
     }
-`
-
+`;
