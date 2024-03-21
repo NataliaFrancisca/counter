@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'SCORE_STORAGE';
+export const STORAGE_KEY = 'SCORE_STORAGE';
 
 export const scoreService = {
     save(matchScore){
@@ -14,6 +14,8 @@ export const scoreService = {
         if(storage){
             return JSON.parse(storage);
         }
+
+        return [];
     },
 
     init(){
@@ -22,5 +24,9 @@ export const scoreService = {
         if(!storage){
             sessionStorage.setItem(STORAGE_KEY, JSON.stringify([]));
         }
+    },
+
+    clean(){
+        sessionStorage.clear(STORAGE_KEY);
     }
 }
