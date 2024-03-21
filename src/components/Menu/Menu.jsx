@@ -1,23 +1,24 @@
+import React from "react";
 import { MenuStyled } from "./Menu.style";
 
-const Menu = ({onToggleModal, onRestartCounter, onSaveMatchScore}) => {
+const Menu = ({onToggleModal, onRestart, onSaveMatchScore}) => {
 
     const onFinishMatch = () => {
         onSaveMatchScore();
-        onRestartCounter();
+        onRestart();
     }
 
     return(
         <MenuStyled>
             <ul>
                 <li> 
-                    <button className="menu-button menu-button_red" onClick={() => onRestartCounter()}>
+                    <button className="menu-button menu-button_red" onClick={() => onRestart()}>
                         <span className="material-symbols-outlined">mop</span>
                     </button>
                 </li>
 
                 <li> 
-                    <button className="menu-button menu-button_blue" onClick={() => onToggleModal()}>
+                    <button className="menu-button menu-button_blue" data-testid="botao-toggle" onClick={() => onToggleModal()}>
                         <span className="material-symbols-outlined">visibility</span>
                     </button>
                 </li>
