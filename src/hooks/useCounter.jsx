@@ -18,15 +18,19 @@ export const useCounter = () => {
 
     const onDecrement = {
         homeTeam(){
-            setCounterHomeTeam((prev) => prev - 1);
+            if(counterHomeTeam > 0){
+                setCounterHomeTeam((prev) => prev - 1);
+            }
         },
 
         visitorTeam(){
-            setCounterVisitorTeam((prev) => prev - 1);
+            if(counterVisitorTeam > 0){
+                setCounterVisitorTeam((prev) => prev - 1);
+            }
         }
     }
 
-    const onRestartCounter = () => {
+    const onRestart = () => {
         setCounterHomeTeam(0);
         setCounterVisitorTeam(0);
     }
@@ -40,8 +44,9 @@ export const useCounter = () => {
             date: dateFormated
         }
 
-        scoreService.save(data);
+        // scoreService.save(data);
+        return data;
     }
 
-    return { counterHomeTeam, counterVisitorTeam, onIncrement, onDecrement, onRestartCounter, onSaveMatchScore }
+    return { counterHomeTeam, counterVisitorTeam, onIncrement, onDecrement, onRestart, onSaveMatchScore }
 };
