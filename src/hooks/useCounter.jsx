@@ -35,7 +35,7 @@ export const useCounter = () => {
         setCounterVisitorTeam(0);
     }
 
-    const onSaveMatchScore = () => {
+    const onSaveScore = () => {
         const dateFormated = formatDate();
 
         const data = {
@@ -44,9 +44,9 @@ export const useCounter = () => {
             date: dateFormated
         }
 
-        // scoreService.save(data);
-        return data;
+        scoreService.save(data);
+        onRestart();
     }
 
-    return { counterHomeTeam, counterVisitorTeam, onIncrement, onDecrement, onRestart, onSaveMatchScore }
+    return { counterHomeTeam, counterVisitorTeam, onIncrement, onDecrement, onRestart, onSaveScore }
 };
