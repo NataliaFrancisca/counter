@@ -15,17 +15,21 @@ beforeEach(() => {
 
 describe('Métodos responsáveis por lidar com o sessionStorage', () => {
 
-    test('O método init deve inicializar uma sessionStorage', () => {
-        // no primeiro momento não temos nenhuma sessionStorage com essa chave
-        const storage = sessionStorage.getItem(STORAGE_KEY);
-        expect(storage).toBeNull();
 
-        // inicio a sessionStorage
+    test('teste se o valor é falso', () => {
         scoreService.init();
 
-        // depois deve retornar um array vazio
-        const storageAfter = sessionStorage.getItem(STORAGE_KEY);
-        expect(storageAfter).toBe('[]');
+        const storage = sessionStorage.getItem(STORAGE_KEY);
+        expect(storage).toBe('[]');
+
+        scoreService.init();
+    });
+
+    test('O método init está funcionando corretamente', () => {
+        scoreService.init();
+
+        const storage = sessionStorage.getItem(STORAGE_KEY);
+        expect(storage).toBe('[]');
     });
 
     test('O método save deve salvar os valores de forma correta', () => {
@@ -57,7 +61,6 @@ describe('Métodos responsáveis por lidar com o sessionStorage', () => {
         const newStorage = scoreService.get();
 
         expect(newStorage).toEqual([]);
-
     });
 
 });
