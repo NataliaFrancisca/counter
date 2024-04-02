@@ -1,17 +1,13 @@
+import React from "react";
 import { MenuStyled } from "./Menu.style";
 
-const Menu = ({onToggleModal, onRestartCounter, onSaveMatchScore}) => {
-
-    const onFinishMatch = () => {
-        onSaveMatchScore();
-        onRestartCounter();
-    }
+const Menu = ({ onToggleModal, onRestart, onSaveScore }) => {
 
     return(
-        <MenuStyled>
+        <MenuStyled data-testid={"menu-component"}> 
             <ul>
                 <li> 
-                    <button className="menu-button menu-button_red" onClick={() => onRestartCounter()}>
+                    <button className="menu-button menu-button_red" onClick={() => onRestart()}>
                         <span className="material-symbols-outlined">mop</span>
                     </button>
                 </li>
@@ -23,8 +19,8 @@ const Menu = ({onToggleModal, onRestartCounter, onSaveMatchScore}) => {
                 </li>
 
                 <li> 
-                    <button className="menu-button menu-button_green" onClick={() => onFinishMatch()}>
-                    <span className="material-symbols-outlined">check_small</span>
+                    <button className="menu-button menu-button_green" onClick={() => onSaveScore()}>
+                        <span className="material-symbols-outlined">check_small</span>
                     </button>
                 </li>
             </ul>

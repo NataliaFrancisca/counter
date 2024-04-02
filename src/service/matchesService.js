@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'SCORE_STORAGE';
+export const STORAGE_KEY = 'SCORE_STORAGE';
 
 export const scoreService = {
     save(matchScore){
@@ -10,17 +10,20 @@ export const scoreService = {
 
     get(){
         const storage = sessionStorage.getItem(STORAGE_KEY);
-
-        if(storage){
-            return JSON.parse(storage);
-        }
+        return storage ? JSON.parse(storage) : [];
     },
 
     init(){
         const storage = sessionStorage.getItem(STORAGE_KEY);
 
-        if(!storage){
+        if(storage == null){
             sessionStorage.setItem(STORAGE_KEY, JSON.stringify([]));
         }
+
+        return;
+    },
+
+    clean(){
+        sessionStorage.clear(STORAGE_KEY);
     }
 }
