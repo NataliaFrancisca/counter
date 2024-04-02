@@ -1,3 +1,4 @@
+import React from "react";
 import { TeamComponentStyled } from "./Team.style"
 
 const Team = ({name, counter, onIncrement, onDecrement}) => {
