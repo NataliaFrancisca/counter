@@ -13,7 +13,7 @@ O projeto é um contador de pontos, onde a pessoa pode usar em partidas de difer
 
 ## Demonstração
 
-![App Screenshot](https://firebasestorage.googleapis.com/v0/b/github-images-6c299.appspot.com/o/counter-nf.gif?alt=media&token=4b112426-816e-4630-99b5-335aea9b232f)
+![App Screenshot](https://raw.githubusercontent.com/NataliaFrancisca/github-readme-images/main/%5Bproject%5D%20-%20counter.png)
 
 ## Stack utilizada
 - React.JS
