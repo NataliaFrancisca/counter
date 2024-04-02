@@ -1,4 +1,4 @@
-class EDate extends Date{
+export class EDate extends Date{
     get day() {
         return checkValueIsLessThanTen(this.getDate());
     }
@@ -25,7 +25,7 @@ export const formatDate = () => {
     return `${day} ${month} ${year} - ${hours}:${minutes}`
 }
 
-const monthName = (month) => {
+export const monthName = (month) => {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return months[month];
 }
