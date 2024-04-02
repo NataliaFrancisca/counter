@@ -1,3 +1,4 @@
+import React from "react";
 import Match from "../Match/Match";
 import { ModalStyledComponent } from "./Modal.style";
 import { scoreService } from "../../service/matchesService";
@@ -16,11 +17,11 @@ const Modal = ({onCloseModal}) => {
             </header>
 
             {matches.length > 0 && 
-                <>
+                <section id="list-of-matchs">
                     {matches.map((match, key) => (
                         <Match match={match} key={key} />
                     ))}
-                </>
+                </section>
             }
         </ModalStyledComponent>
     )
