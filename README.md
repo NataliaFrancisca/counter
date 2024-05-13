@@ -1,19 +1,14 @@
-# 🕹️🔢 Contador de Pontos
+# 🔢 _COUNTER_
 
-O projeto é um contador de pontos, onde a pessoa pode usar em partidas de diferentes esportes e jogos.
+**COUNTER** é um projeto simples de contador de pontos, onde a pessoa pode usar em partidas de esporte ou jogos.
 
 ## Funcionalidades
-
 - Adicionar pontos
 - Remover pontos
-- Salvar as partidas que aconteceram*
-- Limpar o contador dos dois times.
+- Salvar as partidas que ocorreram
+- Limpar o contador dos dois times
 
-***quando você fechar a página do navegador, as partidas serão perdidas.***
-
-## Demonstração
-
-![App Screenshot](https://raw.githubusercontent.com/NataliaFrancisca/github-readme-images/main/%5Bproject%5D%20-%20counter.png)
+| 🚨as partidas são salvas usando _**sessionStorage**_, então quando você fechar a página do navegador as partidas serão apagadas.
 
 ## Stack utilizada
 - React.JS
@@ -23,13 +18,17 @@ O projeto é um contador de pontos, onde a pessoa pode usar em partidas de difer
 - React-Testing-Library
 
 ## Rodando os testes
-
-Para rodar os testes, rode o seguinte comando
+Para rodar os testes use o seguinte comando:
 
 ```bash
   npm run test
   npm run test:coverage
 ```
+
+## Demonstração
+![App Screenshot](https://raw.githubusercontent.com/NataliaFrancisca/github-readme-images/main/%5Bproject%5D%20-%20counter%20-%20vs2.png)
+
+
 
 
 
